@@ -6,6 +6,9 @@ interface TrailsListProps {
   trails: Trail[];
   searchTerm: string;
   onSearchChange: (term: string) => void;
+  difficultyFilter: string;
+  onDifficultyFilter: (difficulty: string) => void;
+  onClearDifficultyFilter: () => void;
   onTrailSelect: (trail: Trail) => void;
   selectedTrail?: Trail;
 }
@@ -51,10 +54,32 @@ const getDifficultyIcon = (difficulty: string) => {
   }
 };
 
+const getFilterButtonColor = (difficulty: string, isActive: boolean) => {
+  if (!isActive) {
+    return 'bg-gray-100 text-gray-600 border-gray-200 hover:bg-gray-200';
+  }
+  
+  switch (difficulty.toLowerCase()) {
+    case 'all':
+      return 'bg-gray-200 text-gray-800 border-gray-300';
+    case 'easy':
+      return 'bg-green-100 text-green-800 border-green-300';
+    case 'moderate':
+      return 'bg-blue-100 text-blue-800 border-blue-300';
+    case 'difficult':
+      return 'bg-orange-100 text-orange-800 border-orange-300';
+    default:
+      return 'bg-gray-100 text-gray-800 border-gray-300';
+  }
+};
+
 export const TrailsList: React.FC<TrailsListProps> = ({ 
   trails, 
   searchTerm, 
   onSearchChange, 
+  difficultyFilter,
+  onDifficultyFilter,
+  onClearDifficultyFilter,
   onTrailSelect, 
   selectedTrail 
 }) => {
@@ -67,7 +92,9 @@ export const TrailsList: React.FC<TrailsListProps> = ({
       <div className="p-6 border-b border-gray-200">
         <h2 className="text-2xl font-bold text-gray-900 mb-1">Canyon Lakes Trails</h2>
         <p className="text-sm text-gray-600 mb-4">Roosevelt National Forest, Colorado</p>
-        <div className="relative">
+        
+        {/* Search Box */}
+        <div className="relative mb-4">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
           <input
             type="text"
@@ -85,6 +112,31 @@ export const TrailsList: React.FC<TrailsListProps> = ({
               <X className="w-4 h-4" />
             </button>
           )}
+        </div>
+
+        {/* Difficulty Filter Buttons */}
+        <div className="flex flex-wrap gap-2">
+          {['all', 'easy', 'moderate', 'difficult'].map((difficulty) => (
+            <button
+              key={difficulty}
+              onClick={() => onDifficultyFilter(difficulty)}
+              className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors flex items-center gap-2 ${getFilterButtonColor(difficulty, difficultyFilter === difficulty)}`}
+            >
+              <span className="capitalize">{difficulty}</span>
+              {difficultyFilter === difficulty && difficulty !== 'all' && (
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    onClearDifficultyFilter();
+                  }}
+                  className="ml-1 p-0.5 rounded-full hover:bg-black hover:bg-opacity-10 transition-colors"
+                  aria-label={`Clear ${difficulty} filter`}
+                >
+                  <X className="w-3 h-3" />
+                </button>
+              )}
+            </button>
+          ))}
         </div>
       </div>
       

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import { Icon, Map } from 'leaflet';
+import { Icon, Map, latLngBounds } from 'leaflet';
 import { Trail } from '../types/trail';
 import { Layers, Mountain, TrendingUp, Clock, MapPin, AlertTriangle } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
@@ -109,25 +109,16 @@ const MapController: React.FC<MapControllerProps> = ({ selectedTrail }) => {
   return null;
 };
 
-interface InteractiveMapProps {
+interface BoundsControllerProps {
   trails: Trail[];
-  selectedTrail?: Trail;
-  onTrailSelect: (trail: Trail) => void;
 }
 
-export const InteractiveMap: React.FC<InteractiveMapProps> = ({ 
-  trails, 
-  selectedTrail, 
-  onTrailSelect 
-}) => {
-  const mapRef = useRef<Map>(null);
-  const [currentLayer, setCurrentLayer] = useState<keyof typeof mapLayers>('terrain');
-  const [showLayerPicker, setShowLayerPicker] = useState(false);
+const BoundsController: React.FC<BoundsControllerProps> = ({ trails }) => {
+  const map = useMap();
+  const [hasInitialized, setHasInitialized] = useState(false);
 
-  // Calculate bounds to include all trails
   const mapBounds = useMemo(() => {
     if (trails.length === 0) {
-      // Default bounds for PWV area if no trails
       return [
         [40.2, -106.1] as [number, number], // Southwest corner
         [40.9, -103.9] as [number, number]  // Northeast corner
@@ -152,6 +143,36 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     ];
   }, [trails]);
 
+  useEffect(() => {
+    if (trails.length > 0) {
+      const bounds = latLngBounds(mapBounds);
+      map.fitBounds(bounds, {
+        padding: [20, 20],
+        maxZoom: 14,
+        duration: 1
+      });
+      setHasInitialized(true);
+    }
+  }, [mapBounds, trails.length, map, hasInitialized]);
+
+  return null;
+};
+
+interface InteractiveMapProps {
+  trails: Trail[];
+  selectedTrail?: Trail;
+  onTrailSelect: (trail: Trail) => void;
+}
+
+export const InteractiveMap: React.FC<InteractiveMapProps> = ({ 
+  trails, 
+  selectedTrail, 
+  onTrailSelect 
+}) => {
+  const mapRef = useRef<Map>(null);
+  const [currentLayer, setCurrentLayer] = useState<keyof typeof mapLayers>('terrain');
+  const [showLayerPicker, setShowLayerPicker] = useState(false);
+
   const toggleLayerPicker = () => {
     setShowLayerPicker(!showLayerPicker);
   };
@@ -165,7 +186,8 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     <div className="h-full w-full relative">
       <MapContainer
         ref={mapRef}
-        bounds={mapBounds}
+        center={[40.5, -105.0]} // Default center, will be overridden by bounds
+        zoom={10}
         style={{ height: '100%', width: '100%' }}
         className="rounded-lg"
       >
@@ -242,6 +264,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         ))}
         
         <MapController selectedTrail={selectedTrail} />
+        <BoundsController trails={trails} />
       </MapContainer>
       
       {/* Layer Picker Control */}

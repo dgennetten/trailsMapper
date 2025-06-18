@@ -8,14 +8,27 @@ import { Mountain, Trees, MapPin } from 'lucide-react';
 function App() {
   const [selectedTrail, setSelectedTrail] = useState<Trail | undefined>();
   const [searchTerm, setSearchTerm] = useState('');
+  const [difficultyFilter, setDifficultyFilter] = useState<string>('all');
 
   const filteredTrails = useMemo(() => {
-    return canyonLakesTrails.filter(trail =>
-      trail.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      trail.difficulty.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      trail.features.some(feature => feature.toLowerCase().includes(searchTerm.toLowerCase()))
-    );
-  }, [searchTerm]);
+    let filtered = canyonLakesTrails;
+    
+    // Apply difficulty filter
+    if (difficultyFilter !== 'all') {
+      filtered = filtered.filter(trail => trail.difficulty.toLowerCase() === difficultyFilter.toLowerCase());
+    }
+    
+    // Apply search filter
+    if (searchTerm) {
+      filtered = filtered.filter(trail =>
+        trail.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        trail.difficulty.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        trail.features.some(feature => feature.toLowerCase().includes(searchTerm.toLowerCase()))
+      );
+    }
+    
+    return filtered;
+  }, [searchTerm, difficultyFilter]);
 
   const handleTrailSelect = (trail: Trail) => {
     setSelectedTrail(trail);
@@ -25,15 +38,42 @@ function App() {
     setSearchTerm(term);
     // Clear selected trail when search changes to avoid showing a trail that's not in filtered results
     if (selectedTrail) {
-      const newFilteredTrails = canyonLakesTrails.filter(trail =>
-        trail.name.toLowerCase().includes(term.toLowerCase()) ||
-        trail.difficulty.toLowerCase().includes(term.toLowerCase()) ||
-        trail.features.some(feature => feature.toLowerCase().includes(term.toLowerCase()))
-      );
+      const newFilteredTrails = canyonLakesTrails.filter(trail => {
+        const matchesSearch = trail.name.toLowerCase().includes(term.toLowerCase()) ||
+          trail.difficulty.toLowerCase().includes(term.toLowerCase()) ||
+          trail.features.some(feature => feature.toLowerCase().includes(term.toLowerCase()));
+        
+        const matchesDifficulty = difficultyFilter === 'all' || trail.difficulty.toLowerCase() === difficultyFilter.toLowerCase();
+        
+        return matchesSearch && matchesDifficulty;
+      });
       if (!newFilteredTrails.find(t => t.id === selectedTrail.id)) {
         setSelectedTrail(undefined);
       }
     }
+  };
+
+  const handleDifficultyFilter = (difficulty: string) => {
+    setDifficultyFilter(difficulty);
+    // Clear selected trail when filter changes
+    if (selectedTrail) {
+      const newFilteredTrails = canyonLakesTrails.filter(trail => {
+        const matchesSearch = !searchTerm || trail.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          trail.difficulty.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          trail.features.some(feature => feature.toLowerCase().includes(searchTerm.toLowerCase()));
+        
+        const matchesDifficulty = difficulty === 'all' || trail.difficulty.toLowerCase() === difficulty.toLowerCase();
+        
+        return matchesSearch && matchesDifficulty;
+      });
+      if (!newFilteredTrails.find(t => t.id === selectedTrail.id)) {
+        setSelectedTrail(undefined);
+      }
+    }
+  };
+
+  const clearDifficultyFilter = () => {
+    setDifficultyFilter('all');
   };
 
   return (
@@ -71,6 +111,9 @@ function App() {
                 trails={filteredTrails}
                 searchTerm={searchTerm}
                 onSearchChange={handleSearchChange}
+                difficultyFilter={difficultyFilter}
+                onDifficultyFilter={handleDifficultyFilter}
+                onClearDifficultyFilter={clearDifficultyFilter}
                 onTrailSelect={handleTrailSelect}
                 selectedTrail={selectedTrail}
               />
