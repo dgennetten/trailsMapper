@@ -24,7 +24,7 @@ export const canyonLakesTrails: Trail[] = [
     trailheadElevation: 'N/A',
     latitude: 40.30316666666667,
     longitude: -105.53516666666667,
-    description: 'No dogs, No bicycles, No stock. This trail starts on National Park Land therefore you must follow parking and entry rules per Rocky Mountain National Park',
+    description: 'No dogs, bicycles, or stock. National Park access - RMNP rules apply.',
     features: ['National Park Access', 'No Dogs', 'No Bicycles', 'No Stock'],
     season: 'Year-Round',
     permitRequired: true
@@ -38,7 +38,7 @@ export const canyonLakesTrails: Trail[] = [
     trailheadElevation: 'N/A',
     latitude: 40.313833333333335,
     longitude: -105.53533333333333,
-    description: 'Dogs are allowed, No bicycles, No stock. If you park in the Lily Lake parking lot entry rules, reservations and permits for RMNP may apply',
+    description: 'Dogs allowed, No bicycles or stock. RMNP rules may apply if parking at Lily Lake.',
     features: ['Dogs Allowed', 'No Bicycles', 'No Stock', 'RMNP Access'],
     season: 'Year-Round',
     permitRequired: false
@@ -234,7 +234,7 @@ export const canyonLakesTrails: Trail[] = [
     trailheadElevation: 'N/A',
     latitude: 40.57983333333333,
     longitude: -105.85566666666666,
-    description: 'Dogs on leash, No bicycles, Stock (Medium, but prohibited May 15 thru Sept. 15)',
+    description: 'Dogs on leash, No bicycles. Stock prohibited May 15-Sept 15.',
     features: ['Dogs Allowed', 'No Bicycles', 'Seasonal Stock Restrictions'],
     season: 'Year-Round',
     permitRequired: false
@@ -318,7 +318,7 @@ export const canyonLakesTrails: Trail[] = [
     trailheadElevation: 'N/A',
     latitude: 40.576166666666666,
     longitude: -105.58633333333333,
-    description: 'Dogs on leash, No bicycles, Stock (Rated easy on trail to Wilderness area - No stock in Wilderness)',
+    description: 'Dogs on leash, No bicycles. Stock allowed to Wilderness boundary only.',
     features: ['Dogs Allowed', 'No Bicycles', 'Wilderness Area', 'Stock Restrictions'],
     season: 'Year-Round',
     permitRequired: false
@@ -332,7 +332,7 @@ export const canyonLakesTrails: Trail[] = [
     trailheadElevation: 'N/A',
     latitude: 40.5705,
     longitude: -105.588,
-    description: 'Dogs on leash, No bicycles, Stock (Rated difficult - not recommended past 1.8 miles)',
+    description: 'Dogs on leash, No bicycles. Stock not recommended past 1.8 miles.',
     features: ['Dogs Allowed', 'No Bicycles', 'Stock Restrictions'],
     season: 'Year-Round',
     permitRequired: false
@@ -346,7 +346,7 @@ export const canyonLakesTrails: Trail[] = [
     trailheadElevation: 'N/A',
     latitude: 40.581,
     longitude: -105.60033333333334,
-    description: 'Dogs on leash, No bicycles, Stock (Rated difficult for Beaver Creek, Rated easy for Fish Creek)',
+    description: 'Dogs on leash, No bicycles. Stock difficult (Beaver Creek), easy (Fish Creek).',
     features: ['Dogs Allowed', 'No Bicycles', 'Stock Access', 'Multiple Trailheads'],
     season: 'Year-Round',
     permitRequired: false
@@ -626,7 +626,7 @@ export const canyonLakesTrails: Trail[] = [
     trailheadElevation: 'N/A',
     latitude: 40.79783333333334,
     longitude: -105.92883333333333,
-    description: 'Dogs on leash, No bicycles, Stock (Rated medium for Link, Rated differate for McIntyre)',
+    description: 'Dogs on leash, No bicycles. Stock moderate (Link), difficult (McIntyre).',
     features: ['Dogs Allowed', 'No Bicycles', 'Stock Access', 'Multiple Trails'],
     season: 'Year-Round',
     permitRequired: false
@@ -654,7 +654,7 @@ export const canyonLakesTrails: Trail[] = [
     trailheadElevation: 'N/A',
     latitude: 40.80833333333333,
     longitude: -106.05033333333333,
-    description: 'Dogs on leash, No bicycles, Stock (Rated moderate for North, Rated difficult for South)',
+    description: 'Dogs on leash, No bicycles. Stock moderate (North), difficult (South).',
     features: ['Dogs Allowed', 'No Bicycles', 'Stock Access', 'Multiple Trails'],
     season: 'Year-Round',
     permitRequired: false
@@ -710,7 +710,7 @@ export const canyonLakesTrails: Trail[] = [
     trailheadElevation: 'N/A',
     latitude: 40.779333333333334,
     longitude: -105.5375,
-    description: 'Dogs allowed, Bicycles allowed from Jul 1 thru Oct 31, Stock (Rated easy)',
+    description: 'Dogs allowed, Bicycles Jul-Oct only, Stock easy.',
     features: ['Dogs Allowed', 'Seasonal Bicycles', 'Stock Access'],
     season: 'Year-Round',
     permitRequired: false
@@ -724,7 +724,7 @@ export const canyonLakesTrails: Trail[] = [
     trailheadElevation: 'N/A',
     latitude: 40.7450364,
     longitude: -105.5415888,
-    description: 'Dogs allowed, Bicycles allowed from Jul 1 thru Oct 31, Stock (Rated easy)',
+    description: 'Dogs allowed, Bicycles Jul-Oct only, Stock easy.',
     features: ['Dogs Allowed', 'Seasonal Bicycles', 'Stock Access'],
     season: 'Year-Round',
     permitRequired: false
@@ -738,7 +738,7 @@ export const canyonLakesTrails: Trail[] = [
     trailheadElevation: 'N/A',
     latitude: 40.767833333333336,
     longitude: -105.60933333333334,
-    description: 'Dogs allowed, Bicycles allowed from July 1 thru Oct 31, Stock (Rated easy)',
+    description: 'Dogs allowed, Bicycles Jul-Oct only, Stock easy.',
     features: ['Dogs Allowed', 'Seasonal Bicycles', 'Stock Access'],
     season: 'Year-Round',
     permitRequired: false
@@ -780,7 +780,7 @@ export const canyonLakesTrails: Trail[] = [
     trailheadElevation: 'N/A',
     latitude: 40.808166666666665,
     longitude: -103.98933333333333,
-    description: 'Dogs on leash, Bicycles, Stock (Rated easy/difficult)',
+    description: 'Dogs on leash, Bicycles allowed, Stock easy/difficult.',
     features: ['Dogs Allowed', 'Bicycles Allowed', 'Stock Access'],
     season: 'Year-Round',
     permitRequired: false
