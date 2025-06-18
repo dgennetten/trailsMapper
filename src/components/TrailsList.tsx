@@ -90,8 +90,6 @@ export const TrailsList: React.FC<TrailsListProps> = ({
   return (
     <div className="bg-white h-full flex flex-col shadow-lg">
       <div className="p-6 border-b border-gray-200">
-        <h2 className="text-2xl font-bold text-gray-900 mb-1">Canyon Lakes Trails</h2>
-        <p className="text-sm text-gray-600 mb-4">Roosevelt National Forest, Colorado</p>
         
         {/* Search Box */}
         <div className="relative mb-4">
