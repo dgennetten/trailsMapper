@@ -1,9 +1,11 @@
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 import { Search, MapPin, Mountain, X, Clock, TrendingUp, AlertTriangle } from 'lucide-react';
 import { Trail } from '../types/trail';
 
 interface TrailsListProps {
   trails: Trail[];
+  searchTerm: string;
+  onSearchChange: (term: string) => void;
   onTrailSelect: (trail: Trail) => void;
   selectedTrail?: Trail;
 }
@@ -49,19 +51,15 @@ const getDifficultyIcon = (difficulty: string) => {
   }
 };
 
-export const TrailsList: React.FC<TrailsListProps> = ({ trails, onTrailSelect, selectedTrail }) => {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const filteredTrails = useMemo(() => {
-    return trails.filter(trail =>
-      trail.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      trail.difficulty.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      trail.features.some(feature => feature.toLowerCase().includes(searchTerm.toLowerCase()))
-    );
-  }, [trails, searchTerm]);
-
+export const TrailsList: React.FC<TrailsListProps> = ({ 
+  trails, 
+  searchTerm, 
+  onSearchChange, 
+  onTrailSelect, 
+  selectedTrail 
+}) => {
   const clearSearch = () => {
-    setSearchTerm('');
+    onSearchChange('');
   };
 
   return (
@@ -75,7 +73,7 @@ export const TrailsList: React.FC<TrailsListProps> = ({ trails, onTrailSelect, s
             type="text"
             placeholder="Search trails by name, difficulty, or features..."
             value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
+            onChange={(e) => onSearchChange(e.target.value)}
             className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
           />
           {searchTerm && (
@@ -92,7 +90,7 @@ export const TrailsList: React.FC<TrailsListProps> = ({ trails, onTrailSelect, s
       
       <div className="flex-1 overflow-y-auto">
         <div className="p-4 space-y-3">
-          {filteredTrails.map((trail) => (
+          {trails.map((trail) => (
             <div
               key={trail.id}
               onClick={() => onTrailSelect(trail)}
@@ -166,7 +164,7 @@ export const TrailsList: React.FC<TrailsListProps> = ({ trails, onTrailSelect, s
       
       <div className="p-4 border-t border-gray-200 bg-gray-50">
         <p className="text-sm text-gray-600 text-center">
-          {filteredTrails.length} of {trails.length} trails
+          {trails.length} trails
         </p>
       </div>
     </div>

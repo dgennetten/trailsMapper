@@ -1,0 +1,2546 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>All PWV Trails</name>
+    <Style id="icon-seq2-0-0-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-1.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-0-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-1.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-0-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-0-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-0-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-1-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-2.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-1-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-2.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-1-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-1-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-1-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-10-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-11.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-10-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-11.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-10-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-10-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-10-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-11-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-12.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-11-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-12.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-11-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-11-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-11-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-12-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-13.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-12-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-13.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-12-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-12-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-12-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-13-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-14.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-13-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-14.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-13-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-13-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-13-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-14-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-15.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-14-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-15.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-14-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-14-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-14-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-15-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-16.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-15-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-16.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-15-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-15-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-15-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-16-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-17.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-16-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-17.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-16-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-16-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-16-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-17-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-18.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-17-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-18.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-17-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-17-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-17-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-18-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-19.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-18-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-19.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-18-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-18-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-18-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-19-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-20.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-19-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-20.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-19-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-19-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-19-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-2-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-3.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-2-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-3.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-2-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-2-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-2-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-20-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-21.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-20-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-21.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-20-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-20-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-20-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-21-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-22.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-21-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-22.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-21-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-21-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-21-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-22-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-23.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-22-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-23.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-22-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-22-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-22-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-23-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-24.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-23-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-24.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-23-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-23-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-23-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-24-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-25.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-24-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-25.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-24-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-24-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-24-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-25-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-26.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-25-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-26.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-25-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-25-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-25-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-26-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-27.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-26-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-27.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-26-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-26-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-26-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-27-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-28.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-27-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-28.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-27-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-27-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-27-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-28-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-29.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-28-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-29.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-28-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-28-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-28-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-29-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-30.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-29-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-30.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-29-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-29-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-29-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-3-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-4.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-3-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-4.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-3-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-3-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-3-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-30-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-31.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-30-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-31.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-30-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-30-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-30-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-31-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-32.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-31-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-32.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-31-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-31-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-31-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-32-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-33.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-32-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-33.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-32-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-32-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-32-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-33-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-34.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-33-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-34.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-33-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-33-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-33-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-34-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-35.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-34-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-35.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-34-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-34-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-34-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-35-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-36.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-35-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-36.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-35-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-35-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-35-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-36-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-37.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-36-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-37.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-36-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-36-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-36-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-37-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-38.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-37-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-38.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-37-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-37-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-37-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-38-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-39.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-38-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-39.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-38-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-38-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-38-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-39-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-40.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-39-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-40.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-39-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-39-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-39-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-4-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-5.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-4-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-5.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-4-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-4-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-4-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-40-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-41.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-40-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-41.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-40-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-40-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-40-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-41-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-42.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-41-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-42.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-41-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-41-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-41-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-42-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-43.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-42-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-43.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-42-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-42-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-42-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-43-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-44.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-43-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-44.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-43-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-43-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-43-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-44-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-45.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-44-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-45.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-44-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-44-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-44-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-45-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-46.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-45-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-46.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-45-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-45-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-45-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-46-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-47.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-46-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-47.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-46-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-46-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-46-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-47-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-48.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-47-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-48.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-47-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-47-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-47-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-48-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-49.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-48-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-49.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-48-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-48-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-48-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-49-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-50.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-49-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-50.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-49-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-49-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-49-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-5-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-6.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-5-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-6.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-5-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-5-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-5-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-50-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-51.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-50-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-51.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-50-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-50-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-50-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-51-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-52.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-51-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-52.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-51-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-51-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-51-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-52-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-53.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-52-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-53.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-52-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-52-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-52-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-53-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-54.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-53-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-54.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-53-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-53-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-53-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-54-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-55.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-54-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-55.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-54-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-54-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-54-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-55-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-56.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-55-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-56.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-55-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-55-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-55-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-6-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-7.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-6-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-7.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-6-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-6-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-6-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-7-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-8.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-7-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-8.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-7-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-7-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-7-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-8-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-9.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-8-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-9.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-8-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-8-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-8-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="icon-seq2-0-9-424242-normal">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-10.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-seq2-0-9-424242-highlight">
+      <IconStyle>
+        <color>ff424242</color>
+        <scale>1</scale>
+        <Icon>
+          <href>images/icon-10.png</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-seq2-0-9-424242">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-seq2-0-9-424242-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-seq2-0-9-424242-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Placemark>
+      <name>Lion Gulch
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_LionGulch.pdf<br><br>--3.7 miles one-way  (Rated moderate)<br>--Dogs on leash<br>--Bicycles are allowed<br>--Stock (Rated Difficult)]]></description>
+      <styleUrl>#icon-seq2-0-0-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.4025865,40.3130723,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Twin Sisters
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_TwinSisters.pdf<br><br>--3.4 miles one-way (Rated Difficult )<br>--No dogs<br>--No bicycles<br>--No stock<br><br>This trail starts on National Park Land therefore you must follow parking and entry rules per Rocky Mountain National Park https://www.nps.gov/romo/index.htm]]></description>
+      <styleUrl>#icon-seq2-0-1-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.535166666667,40.3031666666667,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Lily Mountain
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_LilyMountain.pdf<br><br>--2.0 miles one-way (Rated Difficult)<br>--Dogs are allowed<br>--No bicycles<br>--No stock<br><br>If you park in the Lily Lake parking lot entry rules, reservations and permits for RMNP may apply https://www.nps.gov/romo/planyourvisit/permitsandreservations.htm]]></description>
+      <styleUrl>#icon-seq2-0-2-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.535333333333,40.3138333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Round Mountain
+</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ADbDBKtMFTWNZbIqodoaK7diRVpDymZam7ZCb_2o4QT0sZcb5r55zV6CEKqG2JMJiPIIOgi7i0uV100n3P7X28U9tIt4N9yjxaXo632vDtv8aIE3Lp4Uu3NUPEPq9Mgvz6GAuuTaVrEYwhXYOutw6iypIc6m-ZAKI5sDax0NYQCyN8PsfgH-Y9b6WXHlu61WdRuZgcaHj_dSzUfhVA?authuser=4&fife=s16383" height="200" width="auto" /><br><br>Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_RoundMountain.pdf<br><br>--4.7 miles one-way (Rated Moderate )<br>--Dogs on leash<br>--Bicycles allowed<br>--Stock not recommended]]></description>
+      <styleUrl>#icon-seq2-0-3-424242</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ADbDBKtMFTWNZbIqodoaK7diRVpDymZam7ZCb_2o4QT0sZcb5r55zV6CEKqG2JMJiPIIOgi7i0uV100n3P7X28U9tIt4N9yjxaXo632vDtv8aIE3Lp4Uu3NUPEPq9Mgvz6GAuuTaVrEYwhXYOutw6iypIc6m-ZAKI5sDax0NYQCyN8PsfgH-Y9b6WXHlu61WdRuZgcaHj_dSzUfhVA?authuser=4&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -105.285333333333,40.4201666666667,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Crosier Mountain (Garden Gate)
+</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ADbDBKscf8YlXkWYJ54BuQeduJjIOFH_m8PZGhH2aeNXItx2n1KjLEubF3QDSD6e6MsJfoi17FRTc0Jox9xtVz5EPNSfR4cgj7SZLkLzea-ED9_j8lsfMxQnWiP4CPRDc8NCFE95UI-06XcJz_wu5YHVhGX0SP49Z_r8APimGWeu0gcXvcV7vCRKwHAd6w_9yhCQ9e7MUQYF31lTFA?authuser=4&fife=s16383" height="200" width="auto" /><br><br>Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_CrosierGardenGate.pdf<br><br>--5.1 miles one-way  (Rated moderate)<br>--Dogs allowed<br>--Bicycles allowed<br>--Stock not recommended]]></description>
+      <styleUrl>#icon-seq2-0-4-424242</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ADbDBKscf8YlXkWYJ54BuQeduJjIOFH_m8PZGhH2aeNXItx2n1KjLEubF3QDSD6e6MsJfoi17FRTc0Jox9xtVz5EPNSfR4cgj7SZLkLzea-ED9_j8lsfMxQnWiP4CPRDc8NCFE95UI-06XcJz_wu5YHVhGX0SP49Z_r8APimGWeu0gcXvcV7vCRKwHAd6w_9yhCQ9e7MUQYF31lTFA?authuser=4&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -105.378333333333,40.4423333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Crosier Rainbow
+</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ADbDBKtzWmPTWjtye5qGacoU6h-0wrlPUyCAH4-gfqeZ371YXhFdKPtAd2xTNaKuhNqrkXVADw2rziQ5DlOg0-5iu9-Vr72RdY2QC4EwnvQeYmkW8IwzT9pG5oWX6X1KcUOT18fIcVnElCnG3bNghz1848sZ6yYkw0tLSu3rtp9XXnX52glgHceAddLnSEJHUUhjAUHSgh3F7jzU1Q?authuser=4&fife=s16383" height="200" width="auto" /><br><br>Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_CrosierRainbow.pdf<br><br>--3.7 miles one-way (Rated moderate )<br>--Dogs allowed<br>--Bicycles allowed<br>--Stock (Rated moderate)]]></description>
+      <styleUrl>#icon-seq2-0-5-424242</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ADbDBKtzWmPTWjtye5qGacoU6h-0wrlPUyCAH4-gfqeZ371YXhFdKPtAd2xTNaKuhNqrkXVADw2rziQ5DlOg0-5iu9-Vr72RdY2QC4EwnvQeYmkW8IwzT9pG5oWX6X1KcUOT18fIcVnElCnG3bNghz1848sZ6yYkw0tLSu3rtp9XXnX52glgHceAddLnSEJHUUhjAUHSgh3F7jzU1Q?authuser=4&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -105.425166666667,40.4571666666667,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Crosier Mountain (Glen Haven)
+</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ADbDBKvPA33j9JMGXEpHv4sQLt86ABJZlBKON4WgtWgT_p6DK0YUk3A7cue8ngRMSHTbTgifbKwXHr9f-3bu4C1JxDZh-C_so2oj-Y6GvaiPrruf63baMKf978sb8YGhzy1mO7ZEsgZc1PPe2eXRjOjdWRWE523cjOZ0zMHUWGvN7Lc-y2jATgGFEN9LUFS0sJvOk8lFLH9kSBKM3Q?authuser=4&fife=s16383" height="200" width="auto" /><br><br>Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_CrosierGlenHaven.pdf<br><br>--3.8 miles one-way  (Rated moderate )<br>--Dogs allowed<br>--Bicycles allowed<br>--Stock (Moderate)]]></description>
+      <styleUrl>#icon-seq2-0-6-424242</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ADbDBKvPA33j9JMGXEpHv4sQLt86ABJZlBKON4WgtWgT_p6DK0YUk3A7cue8ngRMSHTbTgifbKwXHr9f-3bu4C1JxDZh-C_so2oj-Y6GvaiPrruf63baMKf978sb8YGhzy1mO7ZEsgZc1PPe2eXRjOjdWRWE523cjOZ0zMHUWGvN7Lc-y2jATgGFEN9LUFS0sJvOk8lFLH9kSBKM3Q?authuser=4&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -105.449,40.4525,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>North Fork
+</name>
+      <description><![CDATA[<img src="https://mymaps.usercontent.google.com/hostedimage/m/*/3ADbDBKv4BVrzjXhd2Jeiax4aGMQKpaK7QlqMVdmlFfdrCKkL-ti8nuAwlLmLo94lUZi79FF1vcqnKKKiPmVF6vljnobFmbyX98JdPk8MS4e5Nq8hISWze8qGFzKHPs3Jmh8fcSInT5lqCe5mzVN2kMaoJN4w9Z0WwmXaghvJLwrZWJW_JOblBvqtYrfYPSUPGcH7DOwzcGO01DdSHPs?authuser=4&fife=s16383" height="200" width="auto" /><br><br>Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_NorthFork.pdf<br><br>--4.4 miles one-way (Rated moderate )<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated moderate)]]></description>
+      <styleUrl>#icon-seq2-0-7-424242</styleUrl>
+      <ExtendedData>
+        <Data name="gx_media_links">
+          <value><![CDATA[https://mymaps.usercontent.google.com/hostedimage/m/*/3ADbDBKv4BVrzjXhd2Jeiax4aGMQKpaK7QlqMVdmlFfdrCKkL-ti8nuAwlLmLo94lUZi79FF1vcqnKKKiPmVF6vljnobFmbyX98JdPk8MS4e5Nq8hISWze8qGFzKHPs3Jmh8fcSInT5lqCe5mzVN2kMaoJN4w9Z0WwmXaghvJLwrZWJW_JOblBvqtYrfYPSUPGcH7DOwzcGO01DdSHPs?authuser=4&fife=s16383]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -105.4605,40.4755,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Bulwark Ridge
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_BulwarkRidge.pdf<br><br>--5.3 miles one-way  (Rated Difficult )<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated difficult)]]></description>
+      <styleUrl>#icon-seq2-0-8-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.4665,40.4778333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Greyrock & Greyrock Meadows
+]]></name>
+      <description><![CDATA[Click here for complete trail description (PDF)<br>www.pwv.org/images/PublicTrailInformation/Public_Greyrock.pdf<br><br>--3.1miles to summit via Greyrock Trail #946 <br>4.3 miles to summit via Greyrock Meadows Trail #947<br>--Dogs on leash<br>--No bicycles<br>--Stock Prohibited]]></description>
+      <styleUrl>#icon-seq2-0-9-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.284166666667,40.6948333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hewlett Gulch
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_HewlettGulch.pdf<br><br>--8.1 miles round-trip (Moderate )<br>--Dogs allowed off leash<br>--Bicycles allowed<br>--Stock (Rated Easy)]]></description>
+      <styleUrl>#icon-seq2-0-10-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.310333333333,40.6895,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Young Gulch
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_YoungGulch.pdf<br><br>--5.3 miles one-way (Rated Moderate )<br>--Dogs allowed off leash<br>--Bicycles allowed<br>--Stock (Rated moderate)]]></description>
+      <styleUrl>#icon-seq2-0-11-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.348,40.6888333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Mt. McConnel & Kreutzer]]></name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_MtMcConnel-KreutzerNature.pdf<br><br>--One-way distances <br>4.7 miles (entire length of Kreutzer Nature + Mt. McConnel + Mt. McConnel Summit Trail) <br>2.0 miles (Kreutzer Nature Trail only)<br><br>--Dogs on leash<br>--Bicycles Prohibited<br>--Stock Prohibited]]></description>
+      <styleUrl>#icon-seq2-0-12-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.464,40.6828333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Lower Dadd Gulch
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_LowerDaddGulch.pdf<br><br>--3.4 miles one-way  Rated Moderate<br>--Dogs allowed off leash<br>--Bicycles allowed<br>--Stock (Rated Easy)]]></description>
+      <styleUrl>#icon-seq2-0-13-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.5415,40.6983333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Roaring Creek
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_RoaringCreek.pdf<br><br>--5.0 miles one-way Rated Moderate<br>--Dogs allowed off leash<br>--Bicycles allowed<br>--Stock (Not recommended)]]></description>
+      <styleUrl>#icon-seq2-0-14-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.735,40.7141666666667,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Big South
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_BigSouth.pdf<br><br>--6.9 miles one-way (Rated Moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Not Recommended)]]></description>
+      <styleUrl>#icon-seq2-0-15-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.8063,40.6345,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Blue Lake
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_BlueLake.pdf<br><br>--5.0 miles to Blue Lake ; 6.9 miles to junction with West Branch Trail (Rated moderate )<br>--Dogs on leash<br>--No bicycles<br>--Stock (Medium, but prohibited May 15 thru Sept. 15)]]></description>
+      <styleUrl>#icon-seq2-0-16-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.855666666667,40.5798333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Trap Park
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_TrapPark.pdf<br><br>--3.1 miles one-way  (Rated Easy)<br>--Dogs allowed<br>--No bicycles<br>--Stock (Rated moderate)]]></description>
+      <styleUrl>#icon-seq2-0-17-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.8215,40.557,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Montgomery Pass/Zimmerman Lake
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_MontgomeryPass.pdf<br><br>Montgomery Pass<br>--1.9 miles one-way (Rated Moderate)<br>--Dogs allowed off-leash<br>--No bicycles allowed<br>--Stock (Rated Moderate)<br><br>Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_ZimmermanLake.pdf<br><br>Zimmerman Lake<br>--1.2 miles one-way  (Rated Easy)<br>--Dogs allowed off leash<br>--No bicycles<br>--Stock (Rated Moderate)]]></description>
+      <styleUrl>#icon-seq2-0-18-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.882166666667,40.54,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Corral Creek & Upper Big South
+]]></name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_CorralCreek-UpperBigSouth.pdf<br><br>--5.2 miles one-way (Rated Easy)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated Moderate)]]></description>
+      <styleUrl>#icon-seq2-0-19-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.771,40.518,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Neota Creek
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_NeotaCreek.pdf<br><br>--1.6 miles one-way (Rated Easy)<br>--Dogs on leash<br>--Bicycles allowed<br>--Stock (Not recommended)]]></description>
+      <styleUrl>#icon-seq2-0-20-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.822,40.4808333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Signal Mountain
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_SignalMountain.pdf<br><br>--5.9 miles one-way (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated difficult)]]></description>
+      <styleUrl>#icon-seq2-0-21-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.555333333333,40.5665,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Emmaline Lake
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_EmmalineLake.pdf<br><br>--5.7 miles one-way (Rated Moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated easy on trail to Wilderness area - No stock in Wilderness)]]></description>
+      <styleUrl>#icon-seq2-0-22-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.586333333333,40.5761666666667,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Stormy Peaks
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_StormyPeaks.pdf<br><br>--3.1 miles one-way  (Rated Moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated difficult - not recommended past 1.8 miles)]]></description>
+      <styleUrl>#icon-seq2-0-23-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.588,40.5705,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Beaver Creek # 1 & Fish Creek Trailhead #2
+]]></name>
+      <description><![CDATA[BEAVER CREEK Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_BeaverCreek.pdf<br>--7.5 miles one-way  (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated difficult)<br><br>FISH CREEK TRAILHEAD #2 Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_FishCreek.pdf<br>--6.3 miles one-way (Rated Moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated easy)]]></description>
+      <styleUrl>#icon-seq2-0-24-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.600333333333,40.581,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Mummy Pass
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_MummyPass.pdf<br><br>--3.4 miles one-way  (Rated Difficult)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated difficult )]]></description>
+      <styleUrl>#icon-seq2-0-25-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.615,40.5563333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Beaver Creek Trailhead #2
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_BeaverCreek.pdf<br><br>--6.4 miles one-way (Rated Moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated difficult)]]></description>
+      <styleUrl>#icon-seq2-0-26-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.6177,40.5797,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hourglass</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_Hourglass.pdf<br><br>--5.0 miles one-way  (Rated Difficult)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated difficult)]]></description>
+      <styleUrl>#icon-seq2-0-27-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.644666666667,40.5853333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Comanche Lake
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_ComancheLake.pdf<br><br>--1.1 miles ( Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Not recommended, no overnight)]]></description>
+      <styleUrl>#icon-seq2-0-28-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.669833333333,40.5901666666667,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Brackenbury</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_Brackenbury.pdf<br><br>--2.1 miles (Rated Moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated easy)]]></description>
+      <styleUrl>#icon-seq2-0-29-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.714333333333,40.594,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Mirror Lake
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_MirrorLake.pdf<br><br>--4.9 miles (Rated Moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated Moderate)]]></description>
+      <styleUrl>#icon-seq2-0-30-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.7475,40.5788333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Zimmerman North & Zimmerman South
+]]></name>
+      <description><![CDATA[ZIMMERMAN NORTH Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_ZimmermanNorth.pdf<br>--5.7 miles  (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated moderate)<br><br>ZIMMERMAN SOUTH Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_ZimmermanSouth.pdf<br>--2.5 miles one-way  (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated moderate)]]></description>
+      <styleUrl>#icon-seq2-0-31-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.757166666667,40.6098333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Browns Lake
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_BrownsLake.pdf<br><br>--5.7 miles (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (difficult)]]></description>
+      <styleUrl>#icon-seq2-0-32-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.6985,40.6495,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Flowers Trailhead #2
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_Flowers.pdf<br><br>--17.9 miles one-way  (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated challenging)]]></description>
+      <styleUrl>#icon-seq2-0-33-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.5639,40.6394,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Flowers Trailhead #1 & Little Beaver Creek
+]]></name>
+      <description><![CDATA[FLOWERS TRAILHEAD #1 Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_Flowers.pdf<br>--17.9 miles  (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (challenging)<br><br>LITTLE BEAVER CREEK Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_LittleBeaverCreek.pdf<br><br>--6.9 miles one-way +.5 mile for Little Fish Creek (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated challenging)]]></description>
+      <styleUrl>#icon-seq2-0-34-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.531833333333,40.6343333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Fish Creek
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_FishCreek.pdf<br><br>--6.3 miles one-way (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated easy)]]></description>
+      <styleUrl>#icon-seq2-0-35-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.526,40.6185,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>West Branch
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_WestBranch.pdf<br>--7.1 miles  (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated difficult)]]></description>
+      <styleUrl>#icon-seq2-0-36-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.8545,40.6786666666667,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Camp Lake & Upper Camp Lake
+]]></name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_CampLake.pdf<br>--6.2 miles one-way via the Camp Lake Trail (Rated Difficult)<br>7.7 miles  one-way via the Camp Lake Trail Loop (Rated Difficult)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated difficult)]]></description>
+      <styleUrl>#icon-seq2-0-37-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.891666666667,40.664,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Rawah (South)
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_RawahSouth.pdf<br><br>--3.3 miles  (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated difficult)]]></description>
+      <styleUrl>#icon-seq2-0-38-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.903166666667,40.6566666666667,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Twin Crater Lakes
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_TwinCraterLakes.pdf<br>--1.4 miles one-way  (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated difficult)]]></description>
+      <styleUrl>#icon-seq2-0-39-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.926666666667,40.66,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>McIntyre Lake
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_McIntyreLake.pdf<br>--1.7 miles one-way (Rated easy)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated moderate)]]></description>
+      <styleUrl>#icon-seq2-0-40-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.954166666667,40.6963333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Sandbar Lakes
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_SandbarLakes.pdf<br><br>--TOTAL = 2.25 miles one-way (Rated Easy)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated moderate)]]></description>
+      <styleUrl>#icon-seq2-0-41-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.94,40.6986666666667,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Lost Lake
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_LostLake.pdf<br><br>--0.9 mile one-way  (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated moderate)]]></description>
+      <styleUrl>#icon-seq2-0-42-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.929166666667,40.7103333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Rawah (North)
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_RawahNorth.pdf<br><br>--9.8 miles one-way (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated difficult)]]></description>
+      <styleUrl>#icon-seq2-0-43-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.875833333333,40.7438333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Link & McIntyre
+]]></name>
+      <description><![CDATA[LINK TRAIL Click here for complete trail description and map (PDF) https://www.pwv.org/images/PublicTrailInformation/Public_Link.pdf<br><br>--10.4 miles one-way (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated medium)<br><br>MCINTYRE TRAIL Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_McIntyre.pdf<br>--9.6 miles one-way (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated differate)]]></description>
+      <styleUrl>#icon-seq2-0-44-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.928833333333,40.7978333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>McIntyre Creek
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_McIntyreCreek.pdf<br><br>--4.3 miles one-way  (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated Difficult)]]></description>
+      <styleUrl>#icon-seq2-0-45-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.996833333333,40.774,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Medicine Bow North & Medicine Bow South
+]]></name>
+      <description><![CDATA[MEDICINE BOW NORTH Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_MedicineBowNorth.pdf<br>--5.1miles one-way (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated moderate)<br><br>MEDICINE BOW SOUTH Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_MedicineBowSouth.pdf<br>--10.5 miles one-way (Rated moderate)<br>--Dogs on leash<br>--No bicycles<br>--Stock (Rated difficult)]]></description>
+      <styleUrl>#icon-seq2-0-46-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -106.050333333333,40.8083333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Columbine Complex
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_ColumbineComplex.pdf<br><br>--4.4 miles one-way (Rated Easy)<br>--Dogs allowed <br>--Bicycles allowed<br>--Stock (Rated easy)]]></description>
+      <styleUrl>#icon-seq2-0-47-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.536666666667,40.8058333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Frog Pond & East Dowdy Lake
+]]></name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_FrogPond-EastDowdyLake.pdf<br><br>--5.6 miles one-way  (Rated easy)<br>--Dogs allowed <br>--Bicycles allowed<br>--Stock (Rated easy)]]></description>
+      <styleUrl>#icon-seq2-0-48-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.5535,40.799,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Mt. Margaret & Divide
+]]></name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_MtMargaret.pdf<br><br>--3.8 miles one-way  (Rated Easy)<br>--Dogs allowed<br>--Bicycles allowed<br>--Stock (Rated easy)]]></description>
+      <styleUrl>#icon-seq2-0-49-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.537833333333,40.7803333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Lady Moon & Disappointment Falls Trailhead #1
+]]></name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_LadyMoon.pdf<br><br>--2.6 miles one-way (Rated Easy)<br>--Dogs allowed<br>--Bicycles allowed from Jul 1 thru Oct 31<br>--Stock (Rated easy)]]></description>
+      <styleUrl>#icon-seq2-0-50-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.5375,40.7793333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Lady Moon & Disappointment Falls Trailhead #2]]></name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_LadyMoon.pdf<br><br>--2.6 miles one-way (Rated Easy)<br>--Dogs allowed<br>--Bicycles allowed from Jul 1 thru Oct 31<br>--Stock (Rated easy)]]></description>
+      <styleUrl>#icon-seq2-0-51-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.5415888,40.7450364,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Granite Ridge (West)
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_GraniteRidgeWest.pdf<br><br>--3.7 miles one-way (Rated easy)<br>--Dogs allowed<br>--Bicycles allowed from July 1 thru Oct 31<br>--Stock (Rated easy)]]></description>
+      <styleUrl>#icon-seq2-0-52-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.609333333333,40.7678333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>North Lone Pine
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_NorthLonePine.pdf<br><br>--4.5 miles one-way (Rated moderate)<br>--Dogs allowed<br>--Bicycles allowed<br>--Stock (Rated moderate)]]></description>
+      <styleUrl>#icon-seq2-0-53-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.6705,40.8083333333333,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Killpecker</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_Killpecker.pdf<br><br>--4.2 miles one-way (Rated difficult)<br>--Dogs allowed<br>--Bicycles and motorcycles allowed<br>--Stock (Rated difficult)]]></description>
+      <styleUrl>#icon-seq2-0-54-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -105.7095,40.8136666666667,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Pawnee Buttes
+</name>
+      <description><![CDATA[Click here for complete trail description and map (PDF)<br>https://www.pwv.org/images/PublicTrailInformation/Public_PawneeButtes.pdf<br><br>--2.1 miles one-way from trailhead to slightly beyond the eastern base of the western Pawnee Butte (Rated Easy)<br>--Dogs on leash<br>--Bicycles<br>--Stock (Rated easy/difficult)]]></description>
+      <styleUrl>#icon-seq2-0-55-424242</styleUrl>
+      <Point>
+        <coordinates>
+          -103.989333333333,40.8081666666667,0
+        </coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

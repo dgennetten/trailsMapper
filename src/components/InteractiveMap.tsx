@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useMemo } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
-import { Icon } from 'leaflet';
+import { Icon, Map } from 'leaflet';
 import { Trail } from '../types/trail';
 import { Layers, Mountain, TrendingUp, Clock, MapPin, AlertTriangle } from 'lucide-react';
 import 'leaflet/dist/leaflet.css';
@@ -120,9 +120,37 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   selectedTrail, 
   onTrailSelect 
 }) => {
-  const mapRef = useRef<any>(null);
+  const mapRef = useRef<Map>(null);
   const [currentLayer, setCurrentLayer] = useState<keyof typeof mapLayers>('terrain');
   const [showLayerPicker, setShowLayerPicker] = useState(false);
+
+  // Calculate bounds to include all trails
+  const mapBounds = useMemo(() => {
+    if (trails.length === 0) {
+      // Default bounds for PWV area if no trails
+      return [
+        [40.2, -106.1] as [number, number], // Southwest corner
+        [40.9, -103.9] as [number, number]  // Northeast corner
+      ];
+    }
+
+    const lats = trails.map(trail => trail.latitude);
+    const lngs = trails.map(trail => trail.longitude);
+    
+    const minLat = Math.min(...lats);
+    const maxLat = Math.max(...lats);
+    const minLng = Math.min(...lngs);
+    const maxLng = Math.max(...lngs);
+    
+    // Add some padding around the bounds
+    const latPadding = (maxLat - minLat) * 0.1;
+    const lngPadding = (maxLng - minLng) * 0.1;
+    
+    return [
+      [minLat - latPadding, minLng - lngPadding] as [number, number], // Southwest corner
+      [maxLat + latPadding, maxLng + lngPadding] as [number, number]  // Northeast corner
+    ];
+  }, [trails]);
 
   const toggleLayerPicker = () => {
     setShowLayerPicker(!showLayerPicker);
@@ -137,8 +165,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     <div className="h-full w-full relative">
       <MapContainer
         ref={mapRef}
-        center={[40.3108, -105.6456]} // Center on Bear Lake area
-        zoom={12}
+        bounds={mapBounds}
         style={{ height: '100%', width: '100%' }}
         className="rounded-lg"
       >
