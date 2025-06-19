@@ -103,9 +103,9 @@ function App() {
         </div>
       </header>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-          <div className="lg:col-span-2 order-1">
+      <main className="px-4 sm:px-6 lg:px-8 py-6">
+        <div className="flex flex-col lg:flex-row gap-6">
+          <div className="w-full lg:w-[400px] xl:w-[420px] 2xl:w-[480px] flex-shrink-0 order-1">
             <div className="h-[50vh] lg:h-[calc(100vh-12rem)] rounded-lg overflow-hidden">
               <TrailsList
                 trails={filteredTrails}
@@ -119,8 +119,7 @@ function App() {
               />
             </div>
           </div>
-          
-          <div className="lg:col-span-3 order-2">
+          <div className="flex-1 order-2">
             <div className="h-[50vh] lg:h-[calc(100vh-12rem)] rounded-lg overflow-hidden shadow-lg">
               <InteractiveMap
                 trails={filteredTrails}
