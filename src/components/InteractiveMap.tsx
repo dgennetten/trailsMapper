@@ -111,9 +111,10 @@ const MapController: React.FC<MapControllerProps> = ({ selectedTrail }) => {
 
 interface BoundsControllerProps {
   trails: Trail[];
+  selectedTrail?: Trail;
 }
 
-const BoundsController: React.FC<BoundsControllerProps> = ({ trails }) => {
+const BoundsController: React.FC<BoundsControllerProps> = ({ trails, selectedTrail }) => {
   const map = useMap();
   const [hasInitialized, setHasInitialized] = useState(false);
 
@@ -144,7 +145,8 @@ const BoundsController: React.FC<BoundsControllerProps> = ({ trails }) => {
   }, [trails]);
 
   useEffect(() => {
-    if (trails.length > 0) {
+    // Only fit bounds if no trail is selected or if this is the initial load
+    if (trails.length > 0 && !selectedTrail) {
       const bounds = latLngBounds(mapBounds);
       map.fitBounds(bounds, {
         padding: [20, 20],
@@ -153,7 +155,7 @@ const BoundsController: React.FC<BoundsControllerProps> = ({ trails }) => {
       });
       setHasInitialized(true);
     }
-  }, [mapBounds, trails.length, map, hasInitialized]);
+  }, [mapBounds, trails.length, map, hasInitialized, selectedTrail]);
 
   return null;
 };
@@ -172,6 +174,15 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const mapRef = useRef<Map>(null);
   const [currentLayer, setCurrentLayer] = useState<keyof typeof mapLayers>('terrain');
   const [showLayerPicker, setShowLayerPicker] = useState(false);
+
+  // Create a trails array that includes both the trails prop and the selected trail
+  const allTrails = useMemo(() => {
+    const trailList = [...trails];
+    if (selectedTrail && !trailList.find(t => t.id === selectedTrail.id)) {
+      trailList.push(selectedTrail);
+    }
+    return trailList;
+  }, [trails, selectedTrail]);
 
   const toggleLayerPicker = () => {
     setShowLayerPicker(!showLayerPicker);
@@ -197,7 +208,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           url={mapLayers[currentLayer].url}
         />
         
-        {trails.map((trail) => (
+        {allTrails.map((trail) => (
           <Marker
             key={trail.id}
             position={[trail.latitude, trail.longitude]}
@@ -264,7 +275,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         ))}
         
         <MapController selectedTrail={selectedTrail} />
-        <BoundsController trails={trails} />
+        <BoundsController trails={allTrails} selectedTrail={selectedTrail} />
       </MapContainer>
       
       {/* Layer Picker Control */}

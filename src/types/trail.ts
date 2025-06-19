@@ -12,3 +12,10 @@ export interface Trail {
   season: string;
   permitRequired: boolean;
 }
+
+export interface Trip {
+  date: string;
+  trail: string;
+  partners: string;
+  treesCleared: string;
+}
