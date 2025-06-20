@@ -268,7 +268,7 @@ function App() {
 
       <main className="px-4 sm:px-6 lg:px-8 py-6">
         <div className="flex flex-col lg:flex-row gap-6">
-          <div className="w-full lg:w-[400px] xl:w-[420px] 2xl:w-[480px] flex-shrink-0 order-1">
+          <div className="w-full lg:w-[400px] xl:w-[420px] 2xl:w-[480px] flex-shrink-0 order-1 lg:order-1">
             <div className="bg-white rounded-lg shadow-lg">
               {/* Shared Header with Filter Buttons */}
               <div className="p-6 border-b border-gray-200">
@@ -276,7 +276,10 @@ function App() {
                 <div className="flex flex-wrap gap-2 mb-4">
                   {/* All Button */}
                   <button
-                    onClick={() => handleDifficultyFilter('all')}
+                    onClick={() => {
+                      handleDifficultyFilter('all');
+                      setSelectedTrail(undefined);
+                    }}
                     className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors flex items-center gap-2 ${getFilterButtonColor('all', difficultyFilter === 'all')}`}
                     aria-label="Show all trails"
                   >
@@ -393,7 +396,7 @@ function App() {
               </div>
 
               {/* Content Area */}
-              <div className="h-[calc(100vh-12rem)] overflow-hidden">
+              <div className="h-[40vh] lg:h-[calc(100vh-12rem)] overflow-hidden">
                 {difficultyFilter === 'trips' ? (
                   <TripsTable 
                     ref={tripsTableRef}
@@ -417,12 +420,14 @@ function App() {
             </div>
           </div>
           
-          <div className="flex-1 order-2">
-            <div className="h-[50vh] lg:h-[calc(100vh-12rem)] rounded-lg overflow-hidden shadow-lg">
+          <div className="flex-1 order-2 lg:order-2">
+            <div className="h-[60vh] lg:h-[calc(100vh-12rem)] rounded-lg overflow-hidden shadow-lg">
               <InteractiveMap
+                key={`map-${difficultyFilter}`}
                 trails={filteredTrails}
                 selectedTrail={selectedTrail}
                 onTrailSelect={handleTrailSelect}
+                difficultyFilter={difficultyFilter}
               />
             </div>
           </div>

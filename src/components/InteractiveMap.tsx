@@ -92,9 +92,10 @@ const mapLayers = {
 
 interface MapControllerProps {
   selectedTrail?: Trail;
+  forceUpdate?: number;
 }
 
-const MapController: React.FC<MapControllerProps> = ({ selectedTrail }) => {
+const MapController: React.FC<MapControllerProps> = ({ selectedTrail, forceUpdate }) => {
   const map = useMap();
 
   useEffect(() => {
@@ -104,7 +105,7 @@ const MapController: React.FC<MapControllerProps> = ({ selectedTrail }) => {
         easeLinearity: 0.25
       });
     }
-  }, [selectedTrail, map]);
+  }, [selectedTrail, map, forceUpdate]);
 
   return null;
 };
@@ -112,9 +113,10 @@ const MapController: React.FC<MapControllerProps> = ({ selectedTrail }) => {
 interface BoundsControllerProps {
   trails: Trail[];
   selectedTrail?: Trail;
+  forceUpdate?: number;
 }
 
-const BoundsController: React.FC<BoundsControllerProps> = ({ trails, selectedTrail }) => {
+const BoundsController: React.FC<BoundsControllerProps> = ({ trails, selectedTrail, forceUpdate }) => {
   const map = useMap();
   const [hasInitialized, setHasInitialized] = useState(false);
 
@@ -155,7 +157,7 @@ const BoundsController: React.FC<BoundsControllerProps> = ({ trails, selectedTra
       });
       setHasInitialized(true);
     }
-  }, [mapBounds, trails.length, map, hasInitialized, selectedTrail]);
+  }, [mapBounds, trails.length, map, hasInitialized, selectedTrail, forceUpdate]);
 
   return null;
 };
@@ -164,25 +166,34 @@ interface InteractiveMapProps {
   trails: Trail[];
   selectedTrail?: Trail;
   onTrailSelect: (trail: Trail) => void;
+  difficultyFilter: string;
 }
 
 export const InteractiveMap: React.FC<InteractiveMapProps> = ({ 
   trails, 
   selectedTrail, 
-  onTrailSelect 
+  onTrailSelect,
+  difficultyFilter
 }) => {
   const mapRef = useRef<Map>(null);
   const [currentLayer, setCurrentLayer] = useState<keyof typeof mapLayers>('terrain');
   const [showLayerPicker, setShowLayerPicker] = useState(false);
+  const [forceUpdate, setForceUpdate] = useState(0);
 
   // Create a trails array that includes both the trails prop and the selected trail
+  // When a trail is selected, only show that trail's pin
   const allTrails = useMemo(() => {
-    const trailList = [...trails];
-    if (selectedTrail && !trailList.find(t => t.id === selectedTrail.id)) {
-      trailList.push(selectedTrail);
+    if (selectedTrail) {
+      return [selectedTrail];
     }
-    return trailList;
+    
+    return trails;
   }, [trails, selectedTrail]);
+
+  // Force update when difficulty filter or visible trails change
+  useEffect(() => {
+    setForceUpdate(Date.now());
+  }, [difficultyFilter, trails.map(t => t.id).join(",")]);
 
   const toggleLayerPicker = () => {
     setShowLayerPicker(!showLayerPicker);
@@ -274,8 +285,8 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           </Marker>
         ))}
         
-        <MapController selectedTrail={selectedTrail} />
-        <BoundsController trails={allTrails} selectedTrail={selectedTrail} />
+        <MapController selectedTrail={selectedTrail} forceUpdate={forceUpdate} />
+        <BoundsController trails={allTrails} selectedTrail={selectedTrail} forceUpdate={forceUpdate} />
       </MapContainer>
       
       {/* Layer Picker Control */}
