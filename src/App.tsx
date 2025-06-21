@@ -3,7 +3,7 @@ import { TrailsList } from './components/TrailsList';
 import { InteractiveMap } from './components/InteractiveMap';
 import { canyonLakesTrails } from './data/trails';
 import { Trail, Trip } from './types/trail';
-import { Mountain, Trees, MapPin, List, Car, Plus, Calendar, ChevronDown, X, Search, Lock } from 'lucide-react';
+import { Mountain, Trees, MapPin, List, Shield, Plus, Calendar, ChevronDown, X, Search, Lock } from 'lucide-react';
 import { TripsTable, TripsTableRef } from './components/TripsTable';
 
 // Add the initial trips data
@@ -239,6 +239,18 @@ function App() {
     }
   };
 
+  // Calculate totals for trips
+  const calculateTotals = () => {
+    const totalPatrols = initialTrips.length;
+    const totalClearedTrees = initialTrips.reduce((sum, trip) => {
+      const trees = parseInt(trip.treesCleared) || 0;
+      return sum + trees;
+    }, 0);
+    return { totalPatrols, totalClearedTrees };
+  };
+
+  const { totalPatrols, totalClearedTrees } = calculateTotals();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50">
       <header className="bg-white shadow-sm border-b border-gray-200">
@@ -316,13 +328,13 @@ function App() {
                     className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors flex items-center gap-2 ${getFilterButtonColor('trips', difficultyFilter === 'trips')}`}
                     aria-label="Trips"
                   >
-                    <Car className="w-5 h-5" />
+                    <Shield className="w-5 h-5" />
                   </button>
                 </div>
 
                 {/* Dynamic Content Area */}
                 {difficultyFilter === 'trips' ? (
-                  <div className="flex items-center justify-between py-2">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 py-2">
                     {/* Sort Dropdown */}
                     <div className="relative" ref={dropdownRef}>
                       <button
@@ -364,12 +376,24 @@ function App() {
                       )}
                     </div>
 
-                    {/* Add Trip Button */}
+                    {/* Totals Section */}
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm">
+                      <div className="flex items-center gap-1 px-3 py-2 bg-blue-50 text-blue-700 rounded-lg">
+                        <span className="font-medium">Total Patrols:</span>
+                        <span className="font-bold">{totalPatrols}</span>
+                      </div>
+                      <div className="flex items-center gap-1 px-3 py-2 bg-green-50 text-green-700 rounded-lg">
+                        <span className="font-medium">Total Cleared Trees:</span>
+                        <span className="font-bold">{totalClearedTrees}</span>
+                      </div>
+                    </div>
+
+                    {/* Add Patrol Button */}
                     <button
                       onClick={handleAddTrip}
                       className="flex items-center gap-1 px-3 py-2 bg-emerald-100 text-emerald-800 rounded-lg hover:bg-emerald-200 transition-colors"
                     >
-                      <Plus className="w-4 h-4" /> Add Trip
+                      <Plus className="w-4 h-4" /> Add Patrol
                     </button>
                   </div>
                 ) : (
