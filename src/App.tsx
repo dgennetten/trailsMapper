@@ -259,7 +259,6 @@ function App() {
             <div className="flex items-center space-x-3">
               <div className="flex items-center space-x-2">
                 <Mountain className="w-8 h-8 text-emerald-600" />
-                <Trees className="w-6 h-6 text-emerald-500" />
               </div>
               <div>
                 <h1 className="text-2xl font-bold text-gray-900">Canyon Lakes (PWV) Trails</h1>

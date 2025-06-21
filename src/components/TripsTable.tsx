@@ -229,51 +229,61 @@ export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({
                 </div>
                 <div className="flex gap-2">
                   <button
-                    onClick={e => { e.stopPropagation(); handleSave(idx); }}
-                    className="flex items-center gap-1 px-3 py-2 bg-green-100 text-green-800 rounded hover:bg-green-200 transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleSave(idx);
+                    }}
+                    className="flex items-center gap-1 px-3 py-1 bg-emerald-100 text-emerald-800 rounded hover:bg-emerald-200 transition-colors"
                   >
                     <Save className="w-4 h-4" /> Save
                   </button>
                   <button
-                    onClick={e => { e.stopPropagation(); handleCancel(); }}
-                    className="flex items-center gap-1 px-3 py-2 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleCancel();
+                    }}
+                    className="flex items-center gap-1 px-3 py-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors"
                   >
                     <X className="w-4 h-4" /> Cancel
                   </button>
                 </div>
               </div>
             ) : (
-              <div>
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex items-center gap-2 text-sm text-gray-600">
-                    <Calendar className="w-4 h-4" />
-                    {formatDate(trip.date)}
+              <div className="space-y-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-gray-500" />
+                    <span className="font-medium text-gray-900">{formatDate(trip.date)}</span>
                   </div>
                   <div className="flex gap-1">
                     <button
-                      onClick={e => { e.stopPropagation(); handleEdit(idx); }}
-                      className="p-1 text-blue-600 hover:bg-blue-100 rounded transition-colors"
-                      title="Edit"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleEdit(idx);
+                      }}
+                      className="p-1 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded transition-colors"
                     >
                       <Save className="w-4 h-4" />
                     </button>
                     <button
-                      onClick={e => { e.stopPropagation(); handleDelete(idx); }}
-                      className="p-1 text-red-600 hover:bg-red-100 rounded transition-colors"
-                      title="Delete"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleDelete(idx);
+                      }}
+                      className="p-1 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
                   </div>
                 </div>
-                
-                <h3 className="font-semibold text-lg text-emerald-800 mb-2">{trip.trail}</h3>
-                
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center gap-2">
-                    <Users className="w-4 h-4" />
-                    <span>{trip.partners}</span>
-                  </div>
+                <div className="text-lg font-semibold text-gray-900">{trip.trail}</div>
+                <div className="space-y-1 text-sm text-gray-600">
+                  {trip.partners && (
+                    <div className="flex items-center gap-2">
+                      <Users className="w-4 h-4" />
+                      <span>{trip.partners}</span>
+                    </div>
+                  )}
                   {trip.treesCleared && (
                     <div className="flex items-center gap-2">
                       <TreePine className="w-4 h-4" />
