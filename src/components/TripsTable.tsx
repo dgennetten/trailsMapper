@@ -76,7 +76,9 @@ export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({
   }, [trips, sortBy, sortDesc]);
 
   const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
+    // Parse the date string as local time to avoid timezone issues
+    const [year, month, day] = dateString.split('-').map(Number);
+    const date = new Date(year, month - 1, day); // month is 0-indexed in Date constructor
     return date.toLocaleDateString('en-US', { 
       year: 'numeric', 
       month: 'short', 
