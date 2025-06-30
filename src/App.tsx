@@ -3,7 +3,7 @@ import { TrailsList } from './components/TrailsList';
 import { InteractiveMap } from './components/InteractiveMap';
 import { canyonLakesTrails } from './data/trails';
 import { Trail, Trip } from './types/trail';
-import { Mountain, Trees, MapPin, List, Shield, Plus, Calendar, ChevronDown, X, Search, Lock } from 'lucide-react';
+import { Mountain, MapPin, Shield, Calendar, ChevronDown, X, Search, Lock, Image, TreePine, Pencil } from 'lucide-react';
 import { TripsTable, TripsTableRef } from './components/TripsTable';
 
 // Add the initial trips data
@@ -176,10 +176,6 @@ function App() {
     }
   };
 
-  const clearDifficultyFilter = () => {
-    setDifficultyFilter('all');
-  };
-
   // Add a handler for selecting a trail by name (for trips)
   const handleTripTrailSelect = (trailName: string) => {
     // Try exact match first
@@ -206,11 +202,6 @@ function App() {
     if (trail) {
       setSelectedTrail(trail);
     }
-  };
-
-  // Add a handler to switch back to trails list
-  const handleShowAllTrails = () => {
-    setDifficultyFilter('all');
   };
 
   // Add a handler for adding trips
@@ -294,8 +285,7 @@ function App() {
                     className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors flex items-center gap-2 ${getFilterButtonColor('all', difficultyFilter === 'all')}`}
                     aria-label="Show all trails"
                   >
-                    <List className="w-5 h-5" />
-                    <span>All</span>
+                    All
                   </button>
                   {/* Easy Button */}
                   <button
@@ -329,6 +319,16 @@ function App() {
                   >
                     <Shield className="w-5 h-5" />
                   </button>
+                  {/* Images Button */}
+                  <a
+                    href="https://photos.app.goo.gl/oMj76Xa8i8enAdyR9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-2 rounded-lg border text-sm font-medium transition-colors flex items-center gap-2 bg-gray-100 text-gray-600 border-gray-200 hover:bg-gray-200"
+                    aria-label="Trail Crew Photos"
+                  >
+                    <Image className="w-5 h-5" />
+                  </a>
                 </div>
 
                 {/* Dynamic Content Area */}
@@ -341,7 +341,7 @@ function App() {
                         className="flex items-center gap-2 px-3 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm"
                       >
                         <Calendar className="w-4 h-4" />
-                        Sort by {getSortLabel()} {tripsSortDesc ? '▼' : '▲'}
+                        {getSortLabel()} {tripsSortDesc ? '▼' : '▲'}
                         <ChevronDown className="w-4 h-4" />
                       </button>
                       
@@ -378,11 +378,11 @@ function App() {
                     {/* Totals Section */}
                     <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-sm">
                       <div className="flex items-center gap-1 px-3 py-2 bg-blue-50 text-blue-700 rounded-lg">
-                        <span className="font-medium">Total Patrols:</span>
+                        <Shield className="w-4 h-4 mr-1" />
                         <span className="font-bold">{totalPatrols}</span>
                       </div>
                       <div className="flex items-center gap-1 px-3 py-2 bg-green-50 text-green-700 rounded-lg">
-                        <span className="font-medium">Total Cleared Trees:</span>
+                        <TreePine className="w-4 h-4 mr-1" />
                         <span className="font-bold">{totalClearedTrees}</span>
                       </div>
                     </div>
@@ -392,7 +392,7 @@ function App() {
                       onClick={handleAddTrip}
                       className="flex items-center gap-1 px-3 py-2 bg-emerald-100 text-emerald-800 rounded-lg hover:bg-emerald-200 transition-colors"
                     >
-                      <Plus className="w-4 h-4" /> Add Patrol
+                      <Pencil className="w-4 h-4" />
                     </button>
                   </div>
                 ) : (
