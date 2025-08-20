@@ -9,6 +9,7 @@ interface TripsTableProps {
   sortDesc?: boolean;
   isAuthenticated?: boolean;
   requireAuth?: (action: () => void) => void;
+  refreshTotals?: () => void;
 }
 
 export interface TripsTableRef {
@@ -23,7 +24,8 @@ export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({
   sortBy = 'date',
   sortDesc = true,
   isAuthenticated = false,
-  requireAuth
+  requireAuth,
+  refreshTotals
 }, ref) => {
   const [trips, setTrips] = useState<Trip[]>([]);
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
@@ -43,7 +45,10 @@ export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({
   // Save trips to localStorage whenever trips change
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(trips));
-  }, [trips]);
+    if (refreshTotals) {
+      refreshTotals();
+    }
+  }, [trips, refreshTotals]);
 
   // Sort trips based on props
   const sortedTrips = React.useMemo(() => {

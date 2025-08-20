@@ -52,6 +52,7 @@ function App() {
   const [showSortDropdown, setShowSortDropdown] = useState(false);
   const [tripsSortBy, setTripsSortBy] = useState<'date' | 'trail' | 'trees'>('date');
   const [tripsSortDesc, setTripsSortDesc] = useState(true);
+  const [tripsUpdateTrigger, setTripsUpdateTrigger] = useState(0);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const tripsTableRef = useRef<TripsTableRef>(null);
   
@@ -232,15 +233,24 @@ function App() {
 
   // Calculate totals for trips
   const calculateTotals = () => {
-    const totalPatrols = initialTrips.length;
-    const totalClearedTrees = initialTrips.reduce((sum, trip) => {
+    // Get current trips from localStorage to calculate real-time totals
+    const savedTrips = localStorage.getItem('trailsMapper.trips');
+    const currentTrips = savedTrips ? JSON.parse(savedTrips) : initialTrips;
+    
+    const totalPatrols = currentTrips.length;
+    const totalClearedTrees = currentTrips.reduce((sum: number, trip: Trip) => {
       const trees = parseInt(trip.treesCleared) || 0;
       return sum + trees;
     }, 0);
     return { totalPatrols, totalClearedTrees };
   };
 
-  const { totalPatrols, totalClearedTrees } = calculateTotals();
+  // Force totals to recalculate when trips change
+  const refreshTotals = () => {
+    setTripsUpdateTrigger(prev => prev + 1);
+  };
+
+  const { totalPatrols, totalClearedTrees } = useMemo(() => calculateTotals(), [tripsUpdateTrigger]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50">
@@ -429,6 +439,7 @@ function App() {
                     sortDesc={tripsSortDesc}
                     isAuthenticated={isAuthenticated}
                     requireAuth={requireAuth}
+                    refreshTotals={refreshTotals}
                   />
                 ) : (
                   <TrailsList
