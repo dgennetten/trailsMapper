@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 import { Trip } from '../types/trail';
 import { Calendar, Users, TreePine, Save, Trash2, X } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 interface TripsTableProps {
   initialTrips: Trip[];
@@ -16,8 +17,6 @@ export interface TripsTableRef {
   add: () => void;
 }
 
-const LOCAL_STORAGE_KEY = 'trailsMapper.trips';
-
 export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({ 
   initialTrips, 
   onTrailSelect, 
@@ -30,25 +29,130 @@ export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({
   const [trips, setTrips] = useState<Trip[]>([]);
   const [editingIndex, setEditingIndex] = useState<number | null>(null);
   const [editRow, setEditRow] = useState<Trip | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // Load trips from localStorage on mount
+  // Load trips from Supabase on mount
   useEffect(() => {
-    const savedTrips = localStorage.getItem(LOCAL_STORAGE_KEY);
-    if (savedTrips) {
-      setTrips(JSON.parse(savedTrips));
-    } else {
+    loadTrips();
+  }, []);
+
+  const loadTrips = async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      
+      const { data, error: fetchError } = await supabase
+        .from('trailPatrols')
+        .select('*')
+        .order('date', { ascending: false });
+
+      if (fetchError) {
+        console.error('Error loading trips from Supabase:', fetchError);
+        const errorMessage = fetchError.message || 'Unknown error';
+        const errorCode = fetchError.code || 'UNKNOWN';
+        setError(`Failed to load patrols: ${errorMessage} (Code: ${errorCode}). Using initial data.`);
+        console.error('Full error details:', fetchError);
+        // Fallback to initial trips if Supabase fails
+        setTrips(initialTrips);
+        setLoading(false);
+        return;
+      }
+
+      if (data && data.length > 0) {
+        // Transform Supabase data to Trip format
+        const transformedTrips: Trip[] = data.map(row => ({
+          id: row.id,
+          date: row.date,
+          trail: row.trail,
+          partners: row.partners || '',
+          treesCleared: row.trees_cleared || ''
+        }));
+        setTrips(transformedTrips);
+      } else {
+        // No data in Supabase, use initial trips
+        setTrips(initialTrips);
+      }
+      
+      setLoading(false);
+    } catch (err) {
+      console.error('Unexpected error loading trips:', err);
+      setError('Unexpected error loading patrols.');
       setTrips(initialTrips);
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(initialTrips));
+      setLoading(false);
     }
-  }, [initialTrips]);
+  };
 
-  // Save trips to localStorage whenever trips change
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(trips));
-    if (refreshTotals) {
-      refreshTotals();
+  // Save a trip to Supabase
+  const saveTripToSupabase = async (trip: Trip): Promise<string | null> => {
+    try {
+      const { data, error: insertError } = await supabase
+        .from('trailPatrols')
+        .insert({
+          date: trip.date,
+          trail: trip.trail,
+          partners: trip.partners || null,
+          trees_cleared: trip.treesCleared || null
+        })
+        .select('id')
+        .single();
+
+      if (insertError) {
+        console.error('Error saving trip to Supabase:', insertError);
+        throw insertError;
+      }
+
+      return data?.id || null;
+    } catch (err) {
+      console.error('Error in saveTripToSupabase:', err);
+      throw err;
     }
-  }, [trips, refreshTotals]);
+  };
+
+  // Update a trip in Supabase
+  const updateTripInSupabase = async (trip: Trip): Promise<void> => {
+    if (!trip.id) {
+      throw new Error('Cannot update trip without ID');
+    }
+
+    try {
+      const { error: updateError } = await supabase
+        .from('trailPatrols')
+        .update({
+          date: trip.date,
+          trail: trip.trail,
+          partners: trip.partners || null,
+          trees_cleared: trip.treesCleared || null
+        })
+        .eq('id', trip.id);
+
+      if (updateError) {
+        console.error('Error updating trip in Supabase:', updateError);
+        throw updateError;
+      }
+    } catch (err) {
+      console.error('Error in updateTripInSupabase:', err);
+      throw err;
+    }
+  };
+
+  // Delete a trip from Supabase
+  const deleteTripFromSupabase = async (tripId: string): Promise<void> => {
+    try {
+      const { error: deleteError } = await supabase
+        .from('trailPatrols')
+        .delete()
+        .eq('id', tripId);
+
+      if (deleteError) {
+        console.error('Error deleting trip from Supabase:', deleteError);
+        throw deleteError;
+      }
+    } catch (err) {
+      console.error('Error in deleteTripFromSupabase:', err);
+      throw err;
+    }
+  };
 
   // Sort trips based on props
   const sortedTrips = React.useMemo(() => {
@@ -103,20 +207,45 @@ export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({
     }
   };
 
-  const handleSave = (index: number) => {
-    if (editRow) {
-      const newTrips = [...trips];
-      const originalIndex = trips.findIndex(trip => 
-        trip.date === sortedTrips[index].date && 
-        trip.trail === sortedTrips[index].trail
-      );
-      if (originalIndex !== -1) {
-        newTrips[originalIndex] = editRow;
+  const handleSave = async (index: number) => {
+    if (!editRow) return;
+
+    try {
+      const tripToSave = { ...editRow };
+      const originalTrip = sortedTrips[index];
+
+      if (originalTrip.id) {
+        // Update existing trip
+        tripToSave.id = originalTrip.id;
+        await updateTripInSupabase(tripToSave);
+        
+        // Update local state
+        const newTrips = trips.map(trip => 
+          trip.id === originalTrip.id ? tripToSave : trip
+        );
+        setTrips(newTrips);
+      } else {
+        // Insert new trip
+        const newId = await saveTripToSupabase(tripToSave);
+        tripToSave.id = newId || undefined;
+        
+        // Update local state
+        const newTrips = trips.map(trip => 
+          trip === originalTrip ? tripToSave : trip
+        );
         setTrips(newTrips);
       }
+
+      setEditingIndex(null);
+      setEditRow(null);
+      
+      if (refreshTotals) {
+        refreshTotals();
+      }
+    } catch (error) {
+      console.error('Error saving trip:', error);
+      alert('Failed to save patrol. Please try again.');
     }
-    setEditingIndex(null);
-    setEditRow(null);
   };
 
   const handleCancel = () => {
@@ -124,19 +253,33 @@ export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({
     setEditRow(null);
   };
 
-  const handleDelete = (index: number) => {
-    if (requireAuth) {
-      requireAuth(() => {
-        const newTrips = trips.filter(trip => 
-          !(trip.date === sortedTrips[index].date && trip.trail === sortedTrips[index].trail)
-        );
+  const handleDelete = async (index: number) => {
+    const tripToDelete = sortedTrips[index];
+    
+    const performDelete = async () => {
+      try {
+        if (tripToDelete.id) {
+          // Delete from Supabase
+          await deleteTripFromSupabase(tripToDelete.id);
+        }
+        
+        // Update local state
+        const newTrips = trips.filter(trip => trip !== tripToDelete);
         setTrips(newTrips);
-      });
+        
+        if (refreshTotals) {
+          refreshTotals();
+        }
+      } catch (error) {
+        console.error('Error deleting trip:', error);
+        alert('Failed to delete patrol. Please try again.');
+      }
+    };
+
+    if (requireAuth) {
+      requireAuth(performDelete);
     } else {
-      const newTrips = trips.filter(trip => 
-        !(trip.date === sortedTrips[index].date && trip.trail === sortedTrips[index].trail)
-      );
-      setTrips(newTrips);
+      performDelete();
     }
   };
 
@@ -147,19 +290,7 @@ export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({
   };
 
   const handleAdd = () => {
-    if (requireAuth) {
-      requireAuth(() => {
-        const newTrip: Trip = {
-          date: new Date().toISOString().split('T')[0],
-          trail: '',
-          partners: '',
-          treesCleared: ''
-        };
-        setTrips([...trips, newTrip]);
-        setEditingIndex(trips.length);
-        setEditRow(newTrip);
-      });
-    } else {
+    const performAdd = () => {
       const newTrip: Trip = {
         date: new Date().toISOString().split('T')[0],
         trail: '',
@@ -169,6 +300,12 @@ export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({
       setTrips([...trips, newTrip]);
       setEditingIndex(trips.length);
       setEditRow(newTrip);
+    };
+
+    if (requireAuth) {
+      requireAuth(performAdd);
+    } else {
+      performAdd();
     }
   };
 
@@ -177,132 +314,166 @@ export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({
     add: handleAdd
   }), [trips, requireAuth]);
 
+  if (loading) {
+    return (
+      <div className="bg-white h-full flex items-center justify-center">
+        <div className="text-center">
+          <div className="text-gray-500">Loading patrols from Supabase...</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-white h-full flex flex-col shadow-lg">
+      {error && (
+        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 m-4">
+          <div className="text-sm text-yellow-700 font-medium mb-2">⚠️ {error}</div>
+          <div className="text-xs text-yellow-600 mt-2">
+            <p>Check the browser console (F12) for detailed error information.</p>
+            <p className="mt-1">Common issues:</p>
+            <ul className="list-disc list-inside mt-1 space-y-1">
+              <li>Missing or incorrect .env file</li>
+              <li>RLS policies blocking access</li>
+              <li>Table name mismatch (should be "trailPatrols")</li>
+            </ul>
+          </div>
+        </div>
+      )}
       <div className="flex-1 overflow-y-auto p-4 space-y-3">
-        {sortedTrips.map((trip, idx) => (
-          <div
-            key={idx}
-            className={`border rounded-lg p-4 transition-all duration-200 hover:shadow-md ${
-              editingIndex === idx
-                ? 'border-emerald-500 bg-emerald-50 shadow-md'
-                : 'border-gray-200 hover:border-gray-300 bg-white cursor-pointer'
-            }`}
-            onClick={() => editingIndex === idx ? undefined : onTrailSelect(trip.trail)}
-          >
-            {editingIndex === idx ? (
-              <div className="space-y-3">
-                <div className="grid grid-cols-2 gap-3">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Date</label>
-                    <input
-                      type="date"
-                      className="w-full border rounded px-3 py-2"
-                      value={editRow?.date || ''}
-                      onChange={e => handleChange('date', e.target.value)}
-                      onClick={e => e.stopPropagation()}
-                    />
+        {sortedTrips.length === 0 ? (
+          <div className="text-center text-gray-500 py-8">
+            No patrols found. Click the pencil icon to add one.
+          </div>
+        ) : (
+          sortedTrips.map((trip, idx) => (
+            <div
+              key={trip.id || idx}
+              className={`border rounded-lg p-4 transition-all duration-200 hover:shadow-md ${
+                editingIndex === idx
+                  ? 'border-emerald-500 bg-emerald-50 shadow-md'
+                  : 'border-gray-200 hover:border-gray-300 bg-white cursor-pointer'
+              }`}
+              onClick={() => editingIndex === idx ? undefined : onTrailSelect(trip.trail)}
+            >
+              {editingIndex === idx ? (
+                <div className="space-y-3">
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Date</label>
+                      <input
+                        type="date"
+                        className="w-full border rounded px-3 py-2"
+                        value={editRow?.date || ''}
+                        onChange={e => handleChange('date', e.target.value)}
+                        onClick={e => e.stopPropagation()}
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Trees Cleared</label>
+                      <input
+                        type="text"
+                        className="w-full border rounded px-3 py-2"
+                        value={editRow?.treesCleared || ''}
+                        onChange={e => handleChange('treesCleared', e.target.value)}
+                        onClick={e => e.stopPropagation()}
+                      />
+                    </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Trees Cleared</label>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Trail</label>
                     <input
                       type="text"
                       className="w-full border rounded px-3 py-2"
-                      value={editRow?.treesCleared || ''}
-                      onChange={e => handleChange('treesCleared', e.target.value)}
+                      value={editRow?.trail || ''}
+                      onChange={e => handleChange('trail', e.target.value)}
                       onClick={e => e.stopPropagation()}
                     />
                   </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Trail</label>
-                  <input
-                    type="text"
-                    className="w-full border rounded px-3 py-2"
-                    value={editRow?.trail || ''}
-                    onChange={e => handleChange('trail', e.target.value)}
-                    onClick={e => e.stopPropagation()}
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1">Partners</label>
-                  <input
-                    type="text"
-                    className="w-full border rounded px-3 py-2"
-                    value={editRow?.partners || ''}
-                    onChange={e => handleChange('partners', e.target.value)}
-                    onClick={e => e.stopPropagation()}
-                  />
-                </div>
-                <div className="flex gap-2">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleSave(idx);
-                    }}
-                    className="flex items-center gap-1 px-3 py-1 bg-emerald-100 text-emerald-800 rounded hover:bg-emerald-200 transition-colors"
-                  >
-                    <Save className="w-4 h-4" /> Save
-                  </button>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleCancel();
-                    }}
-                    className="flex items-center gap-1 px-3 py-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors"
-                  >
-                    <X className="w-4 h-4" /> Cancel
-                  </button>
-                </div>
-              </div>
-            ) : (
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-gray-500" />
-                    <span className="font-medium text-gray-900">{formatDate(trip.date)}</span>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Partners</label>
+                    <input
+                      type="text"
+                      className="w-full border rounded px-3 py-2"
+                      value={editRow?.partners || ''}
+                      onChange={e => handleChange('partners', e.target.value)}
+                      onClick={e => e.stopPropagation()}
+                    />
                   </div>
-                  <div className="flex gap-1">
+                  <div className="flex gap-2">
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        handleEdit(idx);
+                        handleSave(idx);
                       }}
-                      className="p-1 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                      className="flex items-center gap-1 px-3 py-1 bg-emerald-100 text-emerald-800 rounded hover:bg-emerald-200 transition-colors"
+                      title="Save changes"
                     >
-                      <Save className="w-4 h-4" />
+                      <Save className="w-4 h-4" /> Save
                     </button>
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        handleDelete(idx);
+                        handleCancel();
                       }}
-                      className="p-1 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
+                      className="flex items-center gap-1 px-3 py-1 bg-gray-100 text-gray-700 rounded hover:bg-gray-200 transition-colors"
+                      title="Cancel editing"
                     >
-                      <Trash2 className="w-4 h-4" />
+                      <X className="w-4 h-4" /> Cancel
                     </button>
                   </div>
                 </div>
-                <div className="text-lg font-semibold text-gray-900">{trip.trail}</div>
-                <div className="space-y-1 text-sm text-gray-600">
-                  {trip.partners && (
+              ) : (
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <Users className="w-4 h-4" />
-                      <span>{trip.partners}</span>
+                      <Calendar className="w-4 h-4 text-gray-500" />
+                      <span className="font-medium text-gray-900">{formatDate(trip.date)}</span>
                     </div>
-                  )}
-                  {trip.treesCleared && (
-                    <div className="flex items-center gap-2">
-                      <TreePine className="w-4 h-4" />
-                      <span>{trip.treesCleared} trees cleared</span>
+                    <div className="flex gap-1">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleEdit(idx);
+                        }}
+                        className="p-1 text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded transition-colors"
+                        title="Edit Patrol"
+                      >
+                        <Save className="w-4 h-4" />
+                      </button>
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleDelete(idx);
+                        }}
+                        className="p-1 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded transition-colors"
+                        title="Delete Patrol"
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
                     </div>
-                  )}
+                  </div>
+                  <div className="text-lg font-semibold text-gray-900">{trip.trail}</div>
+                  <div className="space-y-1 text-sm text-gray-600">
+                    {trip.partners && (
+                      <div className="flex items-center gap-2">
+                        <Users className="w-4 h-4" />
+                        <span>{trip.partners}</span>
+                      </div>
+                    )}
+                    {trip.treesCleared && (
+                      <div className="flex items-center gap-2">
+                        <TreePine className="w-4 h-4" />
+                        <span>{trip.treesCleared} trees cleared</span>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            )}
-          </div>
-        ))}
+              )}
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
-}); 
+});

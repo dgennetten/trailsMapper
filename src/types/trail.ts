@@ -14,6 +14,7 @@ export interface Trail {
 }
 
 export interface Trip {
+  id?: string; // Supabase UUID (optional for backward compatibility)
   date: string;
   trail: string;
   partners: string;

@@ -298,6 +298,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
               showLayerPicker ? 'bg-emerald-50 border-emerald-300' : ''
             }`}
             aria-label="Map layers"
+            title="Map layers"
           >
             <Layers className="w-5 h-5 text-gray-700" />
           </button>

@@ -5,6 +5,7 @@ import { canyonLakesTrails } from './data/trails';
 import { Trail, Trip } from './types/trail';
 import { Mountain, MapPin, Shield, Calendar, ChevronDown, X, Search, Lock, Image, TreePine, Pencil } from 'lucide-react';
 import { TripsTable, TripsTableRef } from './components/TripsTable';
+import { supabase } from './lib/supabase';
 
 // Add the initial trips data
 const initialTrips: Trip[] = [
@@ -231,26 +232,54 @@ function App() {
     }
   };
 
-  // Calculate totals for trips
-  const calculateTotals = () => {
-    // Get current trips from localStorage to calculate real-time totals
-    const savedTrips = localStorage.getItem('trailsMapper.trips');
-    const currentTrips = savedTrips ? JSON.parse(savedTrips) : initialTrips;
-    
-    const totalPatrols = currentTrips.length;
-    const totalClearedTrees = currentTrips.reduce((sum: number, trip: Trip) => {
-      const trees = parseInt(trip.treesCleared) || 0;
-      return sum + trees;
-    }, 0);
-    return { totalPatrols, totalClearedTrees };
+  // Calculate totals for trips from Supabase
+  const [totalPatrols, setTotalPatrols] = useState(0);
+  const [totalClearedTrees, setTotalClearedTrees] = useState(0);
+
+  const fetchTotals = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('trailPatrols')
+        .select('trees_cleared');
+
+      if (error) {
+        console.error('Error fetching totals:', error);
+        // Fallback to initial trips
+        setTotalPatrols(initialTrips.length);
+        setTotalClearedTrees(initialTrips.reduce((sum, trip) => {
+          const trees = parseInt(trip.treesCleared) || 0;
+          return sum + trees;
+        }, 0));
+        return;
+      }
+
+      if (data) {
+        setTotalPatrols(data.length);
+        setTotalClearedTrees(data.reduce((sum, trip) => {
+          const trees = parseInt(trip.trees_cleared || '0') || 0;
+          return sum + trees;
+        }, 0));
+      }
+    } catch (error) {
+      console.error('Unexpected error fetching totals:', error);
+      // Fallback to initial trips
+      setTotalPatrols(initialTrips.length);
+      setTotalClearedTrees(initialTrips.reduce((sum, trip) => {
+        const trees = parseInt(trip.treesCleared) || 0;
+        return sum + trees;
+      }, 0));
+    }
   };
+
+  // Load totals on mount and when trigger changes
+  useEffect(() => {
+    fetchTotals();
+  }, [tripsUpdateTrigger]);
 
   // Force totals to recalculate when trips change
   const refreshTotals = () => {
     setTripsUpdateTrigger(prev => prev + 1);
   };
-
-  const { totalPatrols, totalClearedTrees } = useMemo(() => calculateTotals(), [tripsUpdateTrigger]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-emerald-50 to-blue-50">
@@ -294,6 +323,7 @@ function App() {
                     }}
                     className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors flex items-center gap-2 ${getFilterButtonColor('all', difficultyFilter === 'all')}`}
                     aria-label="Show all trails"
+                    title="Show all trails"
                   >
                     All
                   </button>
@@ -302,6 +332,7 @@ function App() {
                     onClick={() => handleDifficultyFilter('easy')}
                     className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors flex items-center gap-2 ${getFilterButtonColor('easy', difficultyFilter === 'easy')}`}
                     aria-label="Easy trails"
+                    title="Easy trails"
                   >
                     <Mountain className="w-5 h-5" />
                   </button>
@@ -310,6 +341,7 @@ function App() {
                     onClick={() => handleDifficultyFilter('moderate')}
                     className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors flex items-center gap-2 ${getFilterButtonColor('moderate', difficultyFilter === 'moderate')}`}
                     aria-label="Moderate trails"
+                    title="Moderate trails"
                   >
                     <span className="flex"><Mountain className="w-5 h-5" /><Mountain className="w-5 h-5 -ml-2" /></span>
                   </button>
@@ -318,6 +350,7 @@ function App() {
                     onClick={() => handleDifficultyFilter('difficult')}
                     className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors flex items-center gap-2 ${getFilterButtonColor('difficult', difficultyFilter === 'difficult')}`}
                     aria-label="Difficult trails"
+                    title="Difficult trails"
                   >
                     <span className="flex"><Mountain className="w-5 h-5" /><Mountain className="w-5 h-5 -ml-2" /><Mountain className="w-5 h-5 -ml-2" /></span>
                   </button>
@@ -326,6 +359,7 @@ function App() {
                     onClick={() => handleDifficultyFilter('trips')}
                     className={`px-3 py-2 rounded-lg border text-sm font-medium transition-colors flex items-center gap-2 ${getFilterButtonColor('trips', difficultyFilter === 'trips')}`}
                     aria-label="Trips"
+                    title="PWV Patrols"
                   >
                     <Shield className="w-5 h-5" />
                   </button>
@@ -336,6 +370,7 @@ function App() {
                     rel="noopener noreferrer"
                     className="px-3 py-2 rounded-lg border text-sm font-medium transition-colors flex items-center gap-2 bg-gray-100 text-gray-600 border-gray-200 hover:bg-gray-200"
                     aria-label="Trail Crew Photos"
+                    title="Trail Crew Photos"
                   >
                     <Image className="w-5 h-5" />
                   </a>
@@ -349,6 +384,7 @@ function App() {
                       <button
                         onClick={() => setShowSortDropdown(!showSortDropdown)}
                         className="flex items-center gap-2 px-3 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm"
+                        title="Sort trips"
                       >
                         <Calendar className="w-4 h-4" />
                         {getSortLabel()} {tripsSortDesc ? '▼' : '▲'}
@@ -401,6 +437,7 @@ function App() {
                     <button
                       onClick={handleAddTrip}
                       className="flex items-center gap-1 px-3 py-2 bg-emerald-100 text-emerald-800 rounded-lg hover:bg-emerald-200 transition-colors"
+                      title="Add Patrol"
                     >
                       <Pencil className="w-4 h-4" />
                     </button>
@@ -420,6 +457,7 @@ function App() {
                         onClick={() => handleSearchChange('')}
                         className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-full hover:bg-gray-100"
                         aria-label="Clear search"
+                        title="Clear search"
                       >
                         <X className="w-4 h-4" />
                       </button>
