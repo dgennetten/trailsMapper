@@ -5,7 +5,7 @@ import { canyonLakesTrails } from './data/trails';
 import { Trail, Trip } from './types/trail';
 import { Mountain, MapPin, Shield, Calendar, ChevronDown, X, Search, Lock, Image, TreePine, Pencil } from 'lucide-react';
 import { TripsTable, TripsTableRef } from './components/TripsTable';
-import { supabase } from './lib/supabase';
+import { getSupabase } from './lib/supabase';
 
 // Add the initial trips data
 const initialTrips: Trip[] = [
@@ -238,6 +238,15 @@ function App() {
 
   const fetchTotals = async () => {
     try {
+      const supabase = getSupabase();
+      if (!supabase) {
+        setTotalPatrols(initialTrips.length);
+        setTotalClearedTrees(
+          initialTrips.reduce((sum, trip) => sum + (parseInt(trip.treesCleared) || 0), 0)
+        );
+        return;
+      }
+
       const { data, error } = await supabase
         .from('trailPatrols')
         .select('trees_cleared');

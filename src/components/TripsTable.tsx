@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, forwardRef, useImperativeHandle } from 'react';
 import { Trip } from '../types/trail';
 import { Calendar, Users, TreePine, Save, Trash2, X } from 'lucide-react';
-import { supabase } from '../lib/supabase';
+import { getSupabase } from '../lib/supabase';
 
 interface TripsTableProps {
   initialTrips: Trip[];
@@ -41,7 +41,17 @@ export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({
     try {
       setLoading(true);
       setError(null);
-      
+
+      const supabase = getSupabase();
+      if (!supabase) {
+        setTrips(initialTrips);
+        setError(
+          'Supabase is not configured (add VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY to .env and restart the dev server). Using bundled patrol data; cloud save is disabled.'
+        );
+        setLoading(false);
+        return;
+      }
+
       const { data, error: fetchError } = await supabase
         .from('trailPatrols')
         .select('*')
@@ -85,6 +95,9 @@ export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({
 
   // Save a trip to Supabase
   const saveTripToSupabase = async (trip: Trip): Promise<string | null> => {
+    const supabase = getSupabase();
+    if (!supabase) return null;
+
     try {
       const { data, error: insertError } = await supabase
         .from('trailPatrols')
@@ -115,6 +128,9 @@ export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({
       throw new Error('Cannot update trip without ID');
     }
 
+    const supabase = getSupabase();
+    if (!supabase) return;
+
     try {
       const { error: updateError } = await supabase
         .from('trailPatrols')
@@ -138,6 +154,9 @@ export const TripsTable = forwardRef<TripsTableRef, TripsTableProps>(({
 
   // Delete a trip from Supabase
   const deleteTripFromSupabase = async (tripId: string): Promise<void> => {
+    const supabase = getSupabase();
+    if (!supabase) return;
+
     try {
       const { error: deleteError } = await supabase
         .from('trailPatrols')

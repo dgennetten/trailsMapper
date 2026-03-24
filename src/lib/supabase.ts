@@ -1,21 +1,22 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import type { Database } from './database.types';
 
-// Get Supabase URL and anon key from environment variables
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const supabaseUrl = (import.meta.env.VITE_SUPABASE_URL ?? '').trim();
+const supabaseAnonKey = (import.meta.env.VITE_SUPABASE_ANON_KEY ?? '').trim();
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('❌ Missing Supabase environment variables!');
-  console.error('URL present:', !!supabaseUrl);
-  console.error('Key present:', !!supabaseAnonKey);
-  console.error('Please check your .env file and make sure:');
-  console.error('1. File is named .env (not .env.example)');
-  console.error('2. Variables start with VITE_');
-  console.error('3. You restarted the dev server after creating .env');
+let client: SupabaseClient<Database> | null = null;
+
+/**
+ * Returns a Supabase client when VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY are set.
+ * Otherwise returns null so the app can still load (map + bundled data).
+ *
+ * Patrol data uses PostgREST table routes only (`/rest/v1/trailPatrols`), not the
+ * OpenAPI root (`/rest/v1/`), which Supabase is restricting for anon keys.
+ */
+export function getSupabase(): SupabaseClient<Database> | null {
+  if (!supabaseUrl || !supabaseAnonKey) return null;
+  if (!client) {
+    client = createClient<Database>(supabaseUrl, supabaseAnonKey);
+  }
+  return client;
 }
-
-export const supabase = createClient<Database>(
-  supabaseUrl || '',
-  supabaseAnonKey || ''
-);
